@@ -1,0 +1,26 @@
+.delete_container{
+    position: fixed;
+    width: 70vw;
+    display: block;
+    top: 20px;
+    left: 15vw;
+    border-radius: 5px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+    z-index: 100;
+}
+
+.delete_container button{
+    color: black;
+    margin-bottom: 20px;
+}
+
+.false{
+    display: none;
+}
+
+.true{
+    display: block;
+}

@@ -1,0 +1,13 @@
+.total_header{
+    font-weight: bold;
+}
+
+.total_container{
+    border: 1px solid #E4E7E9;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.total{
+    background: #EFEFEF;
+}

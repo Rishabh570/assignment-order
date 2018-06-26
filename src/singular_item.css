@@ -1,0 +1,18 @@
+.single_item{
+    border: 2px solid rgba(238, 240, 241, 0.7);
+    border-radius: 3px;
+    padding-top: 5px;
+    margin: 5px 0;
+}
+
+.item{
+    /* background: rebeccapurple; */
+}
+
+.delete_icon{
+    text-align: right;
+}
+
+.image_item{
+    width: 30px;
+}

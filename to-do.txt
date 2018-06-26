@@ -1,0 +1,9 @@
+The following items to be implemented:
+    - UI DONE
+    - Making responsive UI - 1 column layout  DONE
+    - state quantity management
+    - Deleting item and showing a notification at the top
+    - Refreshing should maintain state
+    BONUS:
+        - Extra discount of 15% on type: fiction item
+
