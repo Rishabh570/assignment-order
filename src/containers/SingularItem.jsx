@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 import { Image, Row, Col } from 'react-bootstrap'
 import DeleteNotification from './DeleteNotification'
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+
+import { 
+  removeItem,
+  addSubtractQuantity,
+  initiateStates,
+  showModal
+} from '../actions/index'
+
 require('../variables/styles/singular_item.css')
 
 const ran = false;
@@ -47,7 +57,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
-      { 
+      {
         removeItem,
         addSubtractQuantity,
         initiateStates,

@@ -2,6 +2,7 @@ import update from 'immutability-helper';
 import {
     INITIATE_STATES,
     SHOW_MODAL_TRUE,
+    OPERATION,
 
 } from '../actions/types'
 
@@ -30,12 +31,21 @@ const modalOpen = (state, action) => {
     });
 } 
 
+const operation = (state, action) => {
+    console.log("inside operation reducer, action.payload = ", action.payload, '\n')
+    return update(state, {
+        items: { $set: action.payload }
+    })
+}
+
 export default (state = initialStates, action = {}) => {
   switch (action.type) {
     case INITIATE_STATES:
       return intiateSuccess(state, action);
     case SHOW_MODAL_TRUE:
       return modalOpen(state, action);
+    case OPERATION:
+      return operation(state, action);
     
     default:
   }

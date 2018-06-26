@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap'
-require('./total.css')
+require('../variables/styles/total.css')
 
 class Total extends Component {
 

@@ -48,8 +48,9 @@ class App extends Component {
             </Col>
             <Col xs={12} md={8} mdPull={4} className='one' >
               <Items
-                items={this.props.items}
-                addSubtractQuantity={this.props.addSubtractQuantity}/>
+                // items={this.props.items}
+                // addSubtractQuantity={this.props.addSubtractQuantity}
+                />
             </Col>
           </Row>
         </Grid>
@@ -60,15 +61,15 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    items: state.initial.items,
+    // items: state.initial.items,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
       { 
-        removeItem,
-        addSubtractQuantity,
+        // removeItem,
+        // addSubtractQuantity,
         initiateStates
       },
       dispatch

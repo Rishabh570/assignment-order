@@ -1,10 +1,30 @@
 import React, { Component } from 'react';
 import { Table, Grid, Row, Col } from 'react-bootstrap'
+import { addSubtractQuantity, initiateStates } from '../actions/index'
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 import SingularItem from './SingularItem'
 require('../variables/styles/items.css')
 
 class Items extends Component {
 
+
+  addSubtractQuantityHandler = (id, operation) => {
+    console.log("id: ", id, "operation: ", operation, '\n')
+    let len = this.props.items.length
+    let copyState = [...this.props.items]
+    for(let i=0;i<len;i++){
+      if(copyState[i]["id"]===id){
+        if(operation==="add"){
+          copyState[i]["quantity"] += 1
+        }else{
+          copyState[i]["quantity"] -= 1
+        }
+      }
+    }
+    // Dispatch an action to store this state
+    this.props.addSubtractQuantity(copyState);
+  }  
 
   render() {
 
@@ -15,7 +35,7 @@ class Items extends Component {
             <SingularItem item={data} />
         </Col>
         <Col xs={2}>
-            <button onClick={()=> this.props.addSubtractQuantity(data.id,"sub")}>-</button><span>{data.quantity}</span><button onClick={()=>this.props.addSubtractQuantity(data.id,"add")}>+</button>
+            <button onClick={()=> this.addSubtractQuantityHandler(data.id,"sub")}>-</button><span>{data.quantity}</span><button onClick={()=>this.props.addSubtractQuantity(data.id,"add")}>+</button>
         </Col>
         <Col xs={2}>
             <p>{data.price}</p>
