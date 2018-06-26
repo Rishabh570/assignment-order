@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table, Grid, Row, Col } from 'react-bootstrap'
 import SingularItem from './SingularItem'
-require('./items.css')
+require('../variables/styles/items.css')
 
 class Items extends Component {
 
@@ -12,7 +12,7 @@ class Items extends Component {
       return( 
       <Row key={data.id}>
         <Col xs={8}>
-            <SingularItem item={data} removeItem={this.props.removeItem}/>
+            <SingularItem item={data} />
         </Col>
         <Col xs={2}>
             <button onClick={()=> this.props.addSubtractQuantity(data.id,"sub")}>-</button><span>{data.quantity}</span><button onClick={()=>this.props.addSubtractQuantity(data.id,"add")}>+</button>
@@ -43,4 +43,26 @@ class Items extends Component {
   }
 }
 
-export default Items;
+
+const mapStateToProps = state => {
+  return {
+    items: state.initial.items,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+      { 
+
+        addSubtractQuantity,
+        initiateStates
+      },
+      dispatch
+  );
+};
+
+
+export default (
+  connect(mapStateToProps, mapDispatchToProps)(Items)
+);
+

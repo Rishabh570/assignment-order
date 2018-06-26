@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-require('./delete_notification.css')
+require('../variables/styles/delete_notification.css')
 
 class DeleteNotification extends Component {
 
